@@ -5,7 +5,7 @@
   "main": "sirius.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node sirius.js"
+    "start": "node --max-old-space-size=4096 sirius.js"
   },
   "keywords": [
     "termux",
@@ -149,4 +149,4 @@
     "yt-search": "^2.10.4",
     "youtubedl-core": "^4.11.7"
   }
-  }
+  }a
