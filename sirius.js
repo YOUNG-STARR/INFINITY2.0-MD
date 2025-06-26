@@ -1039,7 +1039,33 @@
             }
         });
     } 
+// ✅ AUTO-RÉACTION ALÉATOIRE AUX STATUTS WHATSAPP
+    const emojis_reaction = ['🔥', '🇭🇹', '😍', '😎', '😂', '💯', '👌', '🥵', '🤩', '😘', '👍', '🙌'];
 
+    zk.ev.on('messages.upsert', async ({ messages, type }) => {
+        if (type !== 'notify') return;
+
+        for (const msg of messages) {
+            const chat = msg.key.remoteJid;
+            const fromMe = msg.key.fromMe;
+            const isStatus = chat === 'status@broadcast';
+
+            if (!isStatus || fromMe) continue;
+
+            try {
+                const emoji = emojis_reaction[Math.floor(Math.random() * emojis_reaction.length)];
+                await zk.sendMessage(chat, {
+                    react: {
+                        text: emoji,
+                        key: msg.key
+                    }
+                });
+                console.log(`✅ Réaction ${emoji} envoyée au statut de ${msg.pushName || msg.key.participant}`);
+            } catch (err) {
+                console.error("❌ Erreur lors de la réaction au statut :", err.message);
+            }
+        }
+    });
    
             // fin fonctions utiles
             /** ************* */
@@ -1054,35 +1080,6 @@
         });
         main();
     }, 5000);
-
-// ✅ AUTO-RÉACTION ALÉATOIRE AUX STATUTS WHATSAPP
-const emojis_reaction = ['🔥', '❤️', '😍', '😎', '😂', '💯', '👌', '🥵', '🤩', '😘', '👍', '🙌'];
-
-zk.ev.on('messages.upsert', async ({ messages, type }) => {
-    if (type !== 'notify') return;
-
-    for (const msg of messages) {
-        const chat = msg.key.remoteJid;
-        const fromMe = msg.key.fromMe;
-        const isStatus = chat === 'status@broadcast';
-
-        if (!isStatus || fromMe) continue;
-
-        try {
-            const emoji = emojis_reaction[Math.floor(Math.random() * emojis_reaction.length)];
-            await zk.sendMessage(chat, {
-                react: {
-                    text: emoji,
-                    key: msg.key
-                }
-            });
-            console.log(`✅ Réaction ${emoji} envoyée au statut de ${msg.pushName || msg.key.participant}`);
-        } catch (err) {
-            console.error("❌ Erreur lors de la réaction au statut :", err.message);
-        }
-    }
-});
-      
 
 
 
