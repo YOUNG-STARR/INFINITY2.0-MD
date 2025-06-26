@@ -1,52 +1,68 @@
-
 const fs = require('fs-extra');
 const { Sequelize } = require('sequelize');
-if (fs.existsSync('set.env'))
-    require('dotenv').config({ path: __dirname + '/set.env' });
 const path = require("path");
+
+// Chargement des variables d'environnement si le fichier existe
+if (fs.existsSync('set.env')) {
+    require('dotenv').config({ path: __dirname + '/set.env' });
+}
+
+// Définir le chemin de la base de données locale
 const databasePath = path.join(__dirname, './database.db');
+
+// Déterminer l'URL de la base de données
 const DATABASE_URL = process.env.DATABASE_URL === undefined
     ? databasePath
     : process.env.DATABASE_URL;
+
+// Exportation de toute la configuration dans un seul objet
 module.exports = {
-    ATD: 'oui', // ou 'non' selon ton besoin
-    // autres paramètres ici...
-};
-module.exports = { session: process.env.SESSION_ID || '',
+    ATD: 'oui', // Active Anti-Delete (mettre 'non' pour désactiver)
+
+    session: process.env.SESSION_ID || '',
     PREFIXE: process.env.PREFIX || ".",
     OWNER_NAME: process.env.OWNER_NAME || "SIRIUS THE PARADOX",
-    NUMERO_OWNER : process.env.NUMERO_OWNER || "50939103464",              
+    NUMERO_OWNER: process.env.NUMERO_OWNER || "50939103464",
+
     AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "yes",
-    AUTO_DOWNLOAD_STATUS: process.env.AUTO_DOWNLOAD_STATUS || 'no',
-    BOT : process.env.BOT_NAME || 'INFINITY-MD',
-    URL : process.env.BOT_MENU_LINKS || 'https://files.catbox.moe/rmi418.jpg',
+    AUTO_DOWNLOAD_STATUS: process.env.AUTO_DOWNLOAD_STATUS || "no",
+    BOT: process.env.BOT_NAME || "INFINITY-MD",
+    URL: process.env.BOT_MENU_LINKS || "https://files.catbox.moe/rmi418.jpg",
     MODE: process.env.PUBLIC_MODE || "yes",
-    PM_PERMIT: process.env.PM_PERMIT || 'yes',
-    HEROKU_APP_NAME : process.env.HEROKU_APP_NAME,
-    HEROKU_APY_KEY : process.env.HEROKU_APY_KEY ,
-    WARN_COUNT : process.env.WARN_COUNT || '3' ,
-    ETAT : process.env.PRESENCE || '3',
-    CHATBOT : process.env.CHATBOT || 'yes',
-    DP : process.env.STARTING_BOT_MESSAGE || "yes",
-    ADM : process.env.ANTI_DELETE_MESSAGE || 'yes',
-    ANTIDELETE1 : process.env.ANTIDELETE1 || 'yes',
-                  ANTIDELETE2 : process.env.ANTIDELETE2 || 'yes',
-                  SIRIUS_CHATBOT : process.env.SIRIUS_CHATBOT || 'yes',
-                  ANTICALL : process.env.ANTICALL || 'no',
-                  AUTO_REACT : process.env.AUTO_REACT || 'no',
-                  AUTO_REACT_STATUS : process.env.AUTO_REACT_STATUS || 'yes',
-                  AUTO_REPLY : process.env.AUTO_REPLY || 'yes',
-                  AUTO_READ : process.env.AUTO_READ || 'no',
-                  AUTO_SAVE_CONTACTS : process.env.AUTO_SAVE_CONTACTS || 'no',
-                  AUTO_REJECT_CALL : process.env.AUTO_REJECT_CALL || 'no',
-                  AUTO_BIO : process.env.AUTO_BIO || 'yes',
-                  AUDIO_REPLY : process.env.AUDIO_REPLY || 'yes',
-                  AUTO_TAG_STATUS : process.env.AUTO_TAG_STATUS || 'yes',
+    PM_PERMIT: process.env.PM_PERMIT || "yes",
+
+    HEROKU_APP_NAME: process.env.HEROKU_APP_NAME,
+    HEROKU_APY_KEY: process.env.HEROKU_APY_KEY,
+
+    WARN_COUNT: process.env.WARN_COUNT || "3",
+    ETAT: process.env.PRESENCE || "3",
+    CHATBOT: process.env.CHATBOT || "yes",
+    DP: process.env.STARTING_BOT_MESSAGE || "yes",
+
+    ADM: process.env.ANTI_DELETE_MESSAGE || "yes",
+    ANTIDELETE1: process.env.ANTIDELETE1 || "yes",
+    ANTIDELETE2: process.env.ANTIDELETE2 || "yes",
+
+    SIRIUS_CHATBOT: process.env.SIRIUS_CHATBOT || "yes",
+    ANTICALL: process.env.ANTICALL || "no",
+
+    AUTO_REACT: process.env.AUTO_REACT || "no",
+    AUTO_REACT_STATUS: process.env.AUTO_REACT_STATUS || "yes",
+    AUTO_REPLY: process.env.AUTO_REPLY || "yes",
+    AUTO_READ: process.env.AUTO_READ || "no",
+    AUTO_SAVE_CONTACTS: process.env.AUTO_SAVE_CONTACTS || "no",
+    AUTO_REJECT_CALL: process.env.AUTO_REJECT_CALL || "no",
+    AUTO_BIO: process.env.AUTO_BIO || "yes",
+    AUDIO_REPLY: process.env.AUDIO_REPLY || "yes",
+    AUTO_TAG_STATUS: process.env.AUTO_TAG_STATUS || "yes",
+
     DATABASE_URL,
     DATABASE: DATABASE_URL === databasePath
-        ? "postgresql://postgres:bKlIqoOUWFIHOAhKxRWQtGfKfhGKgmRX@viaduct.proxy.rlwy.net:47738/railway" : "postgresql://postgres:bKlIqoOUWFIHOAhKxRWQtGfKfhGKgmRX@viaduct.proxy.rlwy.net:47738/railway",
-   
+        ? "postgresql://postgres:bKlIqoOUWFIHOAhKxRWQtGfKfhGKgmRX@viaduct.proxy.rlwy.net:47738/railway"
+        : "postgresql://postgres:bKlIqoOUWFIHOAhKxRWQtGfKfhGKgmRX@viaduct.proxy.rlwy.net:47738/railway",
 };
+
+// Rechargement automatique du fichier en cas de modification
 let fichier = require.resolve(__filename);
 fs.watchFile(fichier, () => {
     fs.unwatchFile(fichier);
