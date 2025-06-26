@@ -8,6 +8,10 @@ const databasePath = path.join(__dirname, './database.db');
 const DATABASE_URL = process.env.DATABASE_URL === undefined
     ? databasePath
     : process.env.DATABASE_URL;
+module.exports = {
+    ATD: 'oui', // ou 'non' selon ton besoin
+    // autres paramètres ici...
+};
 module.exports = { session: process.env.SESSION_ID || '',
     PREFIXE: process.env.PREFIX || ".",
     OWNER_NAME: process.env.OWNER_NAME || "SIRIUS THE PARADOX",
