@@ -1,9 +1,9 @@
 process.on('uncaughtException', (err) => {
-    console.error("🧨 Erreur non interceptée :", err);
+    console.error("ðŸ§¨ Erreur non interceptÃ©e :", err);
 });
 
 process.on('unhandledRejection', (reason, promise) => {
-    console.error("🧨 Rejection non gérée :", reason);
+    console.error("ðŸ§¨ Rejection non gÃ©rÃ©e :", reason);
 });
 
 "use strict";
@@ -85,7 +85,7 @@ process.on('unhandledRejection', (reason, promise) => {
     });
     setTimeout(() => {
         async function main() {
-    const emojis_reaction = ['🔥', '❤️', '😍', '😎', '😂', '💯', '👌', '🥵', '🤩', '😘', '👍', '🙌'];
+    const emojis_reaction = ['ðŸ”¥', 'â¤ï¸', 'ðŸ˜', 'ðŸ˜Ž', 'ðŸ˜‚', 'ðŸ’¯', 'ðŸ‘Œ', 'ðŸ¥µ', 'ðŸ¤©', 'ðŸ˜˜', 'ðŸ‘', 'ðŸ™Œ'];
             const { version, isLatest } = await (0, baileys_1.fetchLatestBaileysVersion)();
             const { state, saveCreds } = await (0, baileys_1.useMultiFileAuthState)(__dirname + "/auth");
             const sockOptions = {
@@ -171,7 +171,7 @@ process.on('unhandledRejection', (reason, promise) => {
                 const dj2 = '50940525832';
                 const dj3 = "50947615862";
                 const luffy = '50939103464';
-                const dj4 = '�?50939103464�?';
+                const dj4 = 'â€?50939103464â€?';
                 const sudo = await getAllSudoNumbers();
                 const superUserNumbers = [servBot, dj, dj2, dj3,dj4, luffy, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
                 const allAllowedNumbers = superUserNumbers.concat(sudo);
@@ -184,7 +184,7 @@ process.on('unhandledRejection', (reason, promise) => {
                 if (verifGroupe) {
                     console.log("message provenant du groupe : " + nomGroupe);
                 }
-                console.log("message envoyé par : " + "[" + nomAuteurMessage + " : " + auteurMessage.split("@s.whatsapp.net")[0] + " ]");
+                console.log("message envoyÃ© par : " + "[" + nomAuteurMessage + " : " + auteurMessage.split("@s.whatsapp.net")[0] + " ]");
                 console.log("type de message : " + mtype);
                 console.log("------ contenu du message ------");
                 console.log(texte);
@@ -225,9 +225,9 @@ process.on('unhandledRejection', (reason, promise) => {
                const liens = conf.URL.split(',');
     
     function mybotpic() {
-      // Générer un indice aléatoire entre 0 (inclus) et la longueur du tableau (exclus)
+      // GÃ©nÃ©rer un indice alÃ©atoire entre 0 (inclus) et la longueur du tableau (exclus)
       const indiceAleatoire = Math.floor(Math.random() * liens.length);
-      // Récupérer le lien correspondant à l'indice aléatoire
+      // RÃ©cupÃ©rer le lien correspondant Ã  l'indice alÃ©atoire
       const lienAleatoire = liens[indiceAleatoire];
       return lienAleatoire;
     }
@@ -294,7 +294,7 @@ process.on('unhandledRejection', (reason, promise) => {
 
                             if(msg === 'undefined') {console.log('Message non trouver') ; return} 
 
-                        await zk.sendMessage(idBot,{ image : { url : './media/deleted-message.jpg'},caption : `        😈Anti-delete-message😈\n Message venant de @${msg.key.participant.split('@')[0]}​` , mentions : [msg.key.participant]},)
+                        await zk.sendMessage(idBot,{ image : { url : './media/deleted-message.jpg'},caption : `        ðŸ˜ˆAnti-delete-messageðŸ˜ˆ\n Message venant de @${msg.key.participant.split('@')[0]}â€‹` , mentions : [msg.key.participant]},)
                         .then( () => {
                             zk.sendMessage(idBot,{forward : msg},{quoted : msg}) ;
                         })
@@ -395,7 +395,7 @@ process.on('unhandledRejection', (reason, promise) => {
                             let stickerMess = new Sticker(data.url, {
                                 pack: conf.NOM_OWNER,
                                 type: StickerTypes.FULL,
-                                categories: ["🤩", "🎉"],
+                                categories: ["ðŸ¤©", "ðŸŽ‰"],
                                 id: "12345",
                                 quality: 70,
                                 background: "transparent",
@@ -446,7 +446,7 @@ process.on('unhandledRejection', (reason, promise) => {
             const yes = await verifierEtatJid(origineMessage)
             if ((texte.includes('https://') || texte.includes('http://') ) && verifGroupe &&  yes  ) {
     
-             console.log("lien detecté")
+             console.log("lien detectÃ©")
                 var verifZokAdmin = verifGroupe ? admins.includes(idBot) : false;
                 
                  if(superUser || verifAdmin || !verifZokAdmin  ) { console.log('je fais rien'); return};
@@ -457,25 +457,25 @@ process.on('unhandledRejection', (reason, promise) => {
                                             id: ms.key.id,
                                             participant: auteurMessage
                                         };
-                                        var txt = "lien détecté, \n";
-                                       // txt += `message supprimé \n @${auteurMessage.split("@")[0]} rétiré du groupe.`;
+                                        var txt = "lien dÃ©tectÃ©, \n";
+                                       // txt += `message supprimÃ© \n @${auteurMessage.split("@")[0]} rÃ©tirÃ© du groupe.`;
                                         const gifLink = "https://raw.githubusercontent.com/djalega8000/Zokou-MD/main/media/remover.gif";
                                         var sticker = new Sticker(gifLink, {
-                                            pack: '𝐈𝐍𝐅𝐈𝐍𝐈𝐓𝐘-𝐌𝐃',
+                                            pack: 'ðˆðð…ðˆððˆð“ð˜-ðŒðƒ',
                                             author: conf.NOM_OWNER,
                                             type: StickerTypes.FULL,
-                                            categories: ['🤩', '🎉'],
+                                            categories: ['ðŸ¤©', 'ðŸŽ‰'],
                                             id: '12345',
                                             quality: 50,
                                             background: '#000000'
                                         });
                                         await sticker.toFile("st1.webp");
-                                        // var txt = `@${auteurMsgRepondu.split("@")[0]} a été rétiré du groupe..\n`
+                                        // var txt = `@${auteurMsgRepondu.split("@")[0]} a Ã©tÃ© rÃ©tirÃ© du groupe..\n`
                                         var action = await recupererActionJid(origineMessage);
     
                                           if (action === 'retirer') {
     
-                                            txt += `message supprimé \n @${auteurMessage.split("@")[0]} rétiré du groupe.`;
+                                            txt += `message supprimÃ© \n @${auteurMessage.split("@")[0]} rÃ©tirÃ© du groupe.`;
     
                                         await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") }, { quoted: ms });
                                         (0, baileys_1.delay)(800);
@@ -490,7 +490,7 @@ process.on('unhandledRejection', (reason, promise) => {
                                         await fs.unlink("st1.webp"); } 
                                             
                                            else if (action === 'supp') {
-                                            txt += `message supprimé \n @${auteurMessage.split("@")[0]} veillez eviter d'envoyer des lien.`;
+                                            txt += `message supprimÃ© \n @${auteurMessage.split("@")[0]} veillez eviter d'envoyer des lien.`;
                                            // await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") }, { quoted: ms });
                                            await zk.sendMessage(origineMessage, { text: txt, mentions: [auteurMessage] }, { quoted: ms });
                                            await zk.sendMessage(origineMessage, { delete: key });
@@ -502,7 +502,7 @@ process.on('unhandledRejection', (reason, promise) => {
                                 let warn = await getWarnCountByJID(auteurMessage) ; 
                                 let warnlimit = conf.WARN_COUNT
                              if ( warn >= warnlimit) { 
-                              var kikmsg = `Lien detecté ; vous avez atteint le nombre maximal d'avertissement par consequant vous serrez retiré du groupe`;
+                              var kikmsg = `Lien detectÃ© ; vous avez atteint le nombre maximal d'avertissement par consequant vous serrez retirÃ© du groupe`;
                                 
                                  await zk.sendMessage(origineMessage, { text: kikmsg , mentions: [auteurMessage] }, { quoted: ms }) ;
     
@@ -513,7 +513,7 @@ process.on('unhandledRejection', (reason, promise) => {
     
                                 } else {
                                     var rest = warnlimit - warn ;
-                                  var  msg = `Lien detecté , vous avez un avertissement en plus dans votre casier ;\n passez encore ${rest} avertissement(s) et vous serrez viré du groupe`;
+                                  var  msg = `Lien detectÃ© , vous avez un avertissement en plus dans votre casier ;\n passez encore ${rest} avertissement(s) et vous serrez virÃ© du groupe`;
     
                                   await ajouterUtilisateurAvecWarnCount(auteurMessage)
     
@@ -558,25 +558,25 @@ process.on('unhandledRejection', (reason, promise) => {
                     id: ms.key.id,
                     participant: auteurMessage
                 };
-                var txt = "bot détecté, \n";
-               // txt += `message supprimé \n @${auteurMessage.split("@")[0]} rétiré du groupe.`;
+                var txt = "bot dÃ©tectÃ©, \n";
+               // txt += `message supprimÃ© \n @${auteurMessage.split("@")[0]} rÃ©tirÃ© du groupe.`;
                 const gifLink = "https://raw.githubusercontent.com/djalega8000/Zokou-MD/main/media/remover.gif";
                 var sticker = new Sticker(gifLink, {
-                    pack: '𝐈𝐍𝐅𝐈𝐍𝐈𝐓𝐘-𝐌𝐃',
+                    pack: 'ðˆðð…ðˆððˆð“ð˜-ðŒðƒ',
                     author: conf.NOM_OWNER,
                     type: StickerTypes.FULL,
-                    categories: ['🤩', '🎉'],
+                    categories: ['ðŸ¤©', 'ðŸŽ‰'],
                     id: '12345',
                     quality: 50,
                     background: '#000000'
                 });
                 await sticker.toFile("st1.webp");
-                // var txt = `@${auteurMsgRepondu.split("@")[0]} a été rétiré du groupe..\n`
+                // var txt = `@${auteurMsgRepondu.split("@")[0]} a Ã©tÃ© rÃ©tirÃ© du groupe..\n`
                 var action = await atbrecupererActionJid(origineMessage);
     
                   if (action === 'retirer') {
                 try {
-                    txt += `message supprimé \n @${auteurMessage.split("@")[0]} rétiré du groupe.`;
+                    txt += `message supprimÃ© \n @${auteurMessage.split("@")[0]} rÃ©tirÃ© du groupe.`;
     
                 await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") }, { quoted: ms });
                 (0, baileys_1.delay)(800);
@@ -592,7 +592,7 @@ process.on('unhandledRejection', (reason, promise) => {
                 } }
                     
                    else if (action === 'supp') {
-                    txt += `message supprimé \n @${auteurMessage.split("@")[0]} veillez eviter d'utiliser des bots.`;
+                    txt += `message supprimÃ© \n @${auteurMessage.split("@")[0]} veillez eviter d'utiliser des bots.`;
                   //  await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") }, { quoted: ms });
                    await zk.sendMessage(origineMessage, { text: txt, mentions: [auteurMessage] }, { quoted: ms });
                    await zk.sendMessage(origineMessage, { delete: key });
@@ -604,7 +604,7 @@ process.on('unhandledRejection', (reason, promise) => {
         let warn = await getWarnCountByJID(auteurMessage) ; 
         let warnlimit = conf.WARN_COUNT
      if ( warn >= warnlimit) { 
-      var kikmsg = `bot detecté ; vous avez atteint le nombre maximal d'avertissement par consequant vous serrez retiré du groupe`;
+      var kikmsg = `bot detectÃ© ; vous avez atteint le nombre maximal d'avertissement par consequant vous serrez retirÃ© du groupe`;
         
          await zk.sendMessage(origineMessage, { text: kikmsg , mentions: [auteurMessage] }, { quoted: ms }) ;
     
@@ -615,7 +615,7 @@ process.on('unhandledRejection', (reason, promise) => {
     
         } else {
             var rest = warnlimit - warn ;
-          var  msg = `bot detecté , vous avez un avertissement en plus dans votre casier ;\n passez encore ${rest} avertissement(s) et vous serrez viré du groupe`;
+          var  msg = `bot detectÃ© , vous avez un avertissement en plus dans votre casier ;\n passez encore ${rest} avertissement(s) et vous serrez virÃ© du groupe`;
     
           await ajouterUtilisateurAvecWarnCount(auteurMessage)
     
@@ -653,7 +653,7 @@ process.on('unhandledRejection', (reason, promise) => {
                         /******************* PM_PERMT***************/
             
                         if (!superUser && origineMessage === auteurMessage && conf.PM_PERMIT === "yes" ) {
-                          /*  repondre("Vous avez pas acces aux commandes en privé") ;*/ return }
+                          /*  repondre("Vous avez pas acces aux commandes en privÃ©") ;*/ return }
                         ///////////////////////////////
             
                         
@@ -689,16 +689,16 @@ process.on('unhandledRejection', (reason, promise) => {
                             cd.fonction(origineMessage, zk, commandeOptions);
                         }
                         catch (e) {
-                            console.log("😡😡 " + e);
-                            zk.sendMessage(origineMessage, { text: "😡😡 " + e }, { quoted: ms });
+                            console.log("ðŸ˜¡ðŸ˜¡ " + e);
+                            zk.sendMessage(origineMessage, { text: "ðŸ˜¡ðŸ˜¡ " + e }, { quoted: ms });
                         }
                     
                     }} ;
-                //fin exécution commandes
+                //fin exÃ©cution commandes
                   
                  
                 });
-            //fin événement message
+            //fin Ã©vÃ©nement message
     
     /******** evenement groupe update ****************/
     
@@ -729,19 +729,19 @@ process.on('unhandledRejection', (reason, promise) => {
             const metadata = await zk.groupMetadata(group.id);
     
             if (group.action == 'add' && (await recupevents(group.id, "welcome") == 'yes')) {
-                let msg = `╔════◇◇◇═════╗
-    �? Souhaitons la bienvenue au(x) nouveau(x) membre(s)
-    �? *Nouveau(x) Membre(s) :*
+                let msg = `â•”â•â•â•â•â—‡â—‡â—‡â•â•â•â•â•â•—
+    â•? Souhaitons la bienvenue au(x) nouveau(x) membre(s)
+    â•? *Nouveau(x) Membre(s) :*
     `;
     
                 let membres = group.participants;
                 for (let membre of membres) {
-                    msg += `�? @${membre.split("@")[0]}\n`;
+                    msg += `â•? @${membre.split("@")[0]}\n`;
                 }
     
-                msg += `�?
-    ╚════◇◇◇═════╝
-    �? *Description*   �?
+                msg += `â•?
+    â•šâ•â•â•â•â—‡â—‡â—‡â•â•â•â•â•â•
+    â—? *Description*   â—?
     
     ${metadata.desc}`;
     
@@ -766,7 +766,7 @@ process.on('unhandledRejection', (reason, promise) => {
              zk.sendMessage(
                   group.id,
                   {
-                    text : `@${(group.author).split("@")[0]} a enfreinst la règle de l'antipromote par consequent lui et @${(group.participants[0]).split("@")[0]} ont été demis des droits d'aministration`,
+                    text : `@${(group.author).split("@")[0]} a enfreinst la rÃ¨gle de l'antipromote par consequent lui et @${(group.participants[0]).split("@")[0]} ont Ã©tÃ© demis des droits d'aministration`,
                     mentions : [group.author,group.participants[0]]
                   }
              )
@@ -782,7 +782,7 @@ process.on('unhandledRejection', (reason, promise) => {
                zk.sendMessage(
                     group.id,
                     {
-                      text : `@${(group.author).split("@")[0]} a enfreint la règle de l'antidemote car il a denommer @${(group.participants[0]).split("@")[0]} par consequent , il est demit des droits d'aministration` ,
+                      text : `@${(group.author).split("@")[0]} a enfreint la rÃ¨gle de l'antidemote car il a denommer @${(group.participants[0]).split("@")[0]} par consequent , il est demit des droits d'aministration` ,
                       mentions : [group.author,group.participants[0]]
                     }
                )
@@ -842,7 +842,7 @@ process.on('unhandledRejection', (reason, promise) => {
         
             }
           } else {
-            console.log('Les crons n\'ont pas été activés');
+            console.log('Les crons n\'ont pas Ã©tÃ© activÃ©s');
           }
 
           return
@@ -851,7 +851,7 @@ process.on('unhandledRejection', (reason, promise) => {
         // /
        
                
-            //événement contact
+            //Ã©vÃ©nement contact
             zk.ev.on("contacts.upsert", async (contacts) => {
                 const insertContact = (newContact) => {
                     for (const contact of newContact) {
@@ -866,46 +866,46 @@ process.on('unhandledRejection', (reason, promise) => {
                 };
                 insertContact(contacts);
             });
-            //fin événement contact 
-            //événement connexion
+            //fin Ã©vÃ©nement contact 
+            //Ã©vÃ©nement connexion
             zk.ev.on("connection.update", async (con) => {
                 const { lastDisconnect, connection , receivedPendingNotifications } = con;
                 if (connection === "connecting") {
-                    console.log("ℹ️ Connexion en cours...");
+                    console.log("â„¹ï¸ Connexion en cours...");
                 }
                 else if (connection === 'open') {
 
     
 
-                    console.log("�? connexion reussie! ☺️");
+                    console.log("âœ? connexion reussie! â˜ºï¸");
 
         try {
             const ownerJid = zk.user.id.split(":")[0] + "@s.whatsapp.net";
             await zk.sendMessage(ownerJid, {
-                text: `${conf.BOT} est connecté avec succès ✅`
+                text: `${conf.BOT} est connectÃ© avec succÃ¨s âœ…`
             });
-            console.log("�? Message de confirmation envoyé à :", ownerJid);
+            console.log("âœ? Message de confirmation envoyÃ© Ã  :", ownerJid);
         } catch (e) {
-            console.error("�? Erreur lors de l’envoi du message de connexion :", e.message);
+            console.error("â? Erreur lors de lâ€™envoi du message de connexion :", e.message);
         }
                     console.log("--");
                     await (0, baileys_1.delay)(200);
                     console.log("------");
                     await (0, baileys_1.delay)(300);
                     console.log("------------------/-----");
-                    console.log(`${conf.BOT} est en ligne ♾️\n\n`);
+                    console.log(`${conf.BOT} est en ligne â™¾ï¸\n\n`);
                     //chargement des commandes 
                     console.log("chargement des commandes ...\n");
                     fs.readdirSync(__dirname + "/commandes").forEach((fichier) => {
                         if (path.extname(fichier).toLowerCase() == (".js")) {
                             try {
                                 require(__dirname + "/commandes/" + fichier);
-                                console.log(fichier + " installé ✔️");
+                                console.log(fichier + " installÃ© âœ”ï¸");
                             }
                             catch (e) {
-                                console.log(`${fichier} n'a pas pu être chargé pour les raisons suivantes : ${e}`);
+                                console.log(`${fichier} n'a pas pu Ãªtre chargÃ© pour les raisons suivantes : ${e}`);
                             } /* require(__dirname + "/commandes/" + fichier);
-                             console.log(fichier + " installé ✔️")*/
+                             console.log(fichier + " installÃ© âœ”ï¸")*/
                             (0, baileys_1.delay)(300);
                         }
                     });
@@ -919,33 +919,33 @@ process.on('unhandledRejection', (reason, promise) => {
                         md = "private";
                     }
                     else {
-                        md = "indéfini";
+                        md = "indÃ©fini";
                     }
-                    console.log("chargement des commandes terminé �?");
+                    console.log("chargement des commandes terminÃ© âœ?");
 
                     await activateCrons();
                    
                  if((conf.DP).toLowerCase() === 'yes') {
-                    let cmsg = `╔════◇
-�? 『INFINITY-MD�?
-�?    Prefix : [ ${prefixe} ]
-�?    Mode : ${md}
-�?    Total Commands : ${evt.cm.length}
-╚══════════════════╝
+                    let cmsg = `â•”â•â•â•â•â—‡
+â•? ã€ŽINFINITY-MDã€?
+â•?    Prefix : [ ${prefixe} ]
+â•?    Mode : ${md}
+â•?    Total Commands : ${evt.cm.length}
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
-╔═════�?
-�? Powered by SIRIUS
-�? Join our Channel: https://whatsapp.com/channel/0029Van0rwb5Ejy2o769hi0J
-╚══════════════════╝
-    �?    Prefix : [ ${prefixe} ]
-    �?    Mode :${md}
-    �?    Nombre total de Commandes : ${evt.cm.length}�?
-    ╚══════════════════╝
+â•”â•â•â•â•â•â—?
+â•? Powered by SIRIUS
+â•? Join our Channel: https://whatsapp.com/channel/0029Van0rwb5Ejy2o769hi0J
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    â•?    Prefix : [ ${prefixe} ]
+    â•?    Mode :${md}
+    â•?    Nombre total de Commandes : ${evt.cm.length}ï¸?
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     
-    ╔═════�?
-    ║𝙥𝙤𝙬𝙚𝙧𝙚�? 𝙗𝙮 𝙎𝙄𝙍𝙄𝙐𝙎
-    �? 
-    ╚══════════════════╝`;
+    â•”â•â•â•â•â•â—?
+    â•‘ð™¥ð™¤ð™¬ð™šð™§ð™šð™? ð™—ð™® ð™Žð™„ð™ð™„ð™ð™Ž
+    â•? 
+    â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•`;
                    
                     await zk.sendMessage(zk.user.id, { text: cmsg });
                  }
@@ -953,30 +953,30 @@ process.on('unhandledRejection', (reason, promise) => {
                 else if (connection == "close") {
                     let raisonDeconnexion = new boom_1.Boom(lastDisconnect?.error)?.output.statusCode;
                     if (raisonDeconnexion === baileys_1.DisconnectReason.badSession) {
-                        console.log('Session id érronée veuillez rescanner le qr svp ...');
+                        console.log('Session id Ã©rronÃ©e veuillez rescanner le qr svp ...');
                     }
                     else if (raisonDeconnexion === baileys_1.DisconnectReason.connectionClosed) {
-                        console.log('!!! connexion fermée, reconnexion en cours ...');
+                        console.log('!!! connexion fermÃ©e, reconnexion en cours ...');
                         main();
                     }
                     else if (raisonDeconnexion === baileys_1.DisconnectReason.connectionLost) {
-                        console.log('connexion au serveur perdue 😞 ,,, reconnexion en cours ... ');
+                        console.log('connexion au serveur perdue ðŸ˜ž ,,, reconnexion en cours ... ');
                         main();
                     }
                     else if (raisonDeconnexion === baileys_1.DisconnectReason?.connectionReplaced) {
-                        console.log('connexion réplacée ,,, une sesssion est déjà ouverte veuillez la fermer svp !!!');
+                        console.log('connexion rÃ©placÃ©e ,,, une sesssion est dÃ©jÃ  ouverte veuillez la fermer svp !!!');
                     }
                     else if (raisonDeconnexion === baileys_1.DisconnectReason.loggedOut) {
-                        console.log('vous êtes déconnecté,,, veuillez rescanner le code qr svp');
+                        console.log('vous Ãªtes dÃ©connectÃ©,,, veuillez rescanner le code qr svp');
                     }
                     else if (raisonDeconnexion === baileys_1.DisconnectReason.restartRequired) {
-                        console.log('redémarrage en cours ▶️');
+                        console.log('redÃ©marrage en cours â–¶ï¸');
                         main();
                     }
                     else {
 
                         console.log('redemarrage sur le coup de l\'erreur  ',raisonDeconnexion) ;         
-                        //repondre("* Redémarrage du bot en cour ...*");
+                        //repondre("* RedÃ©marrage du bot en cour ...*");
 
                                     const {exec}=require("child_process") ;
 
@@ -987,10 +987,10 @@ process.on('unhandledRejection', (reason, promise) => {
                     main(); //console.log(session)
                 }
             });
-            //fin événement connexion
-            //événement authentification 
+            //fin Ã©vÃ©nement connexion
+            //Ã©vÃ©nement authentification 
             zk.ev.on("creds.update", saveCreds);
-            //fin événement authentification 
+            //fin Ã©vÃ©nement authentification 
             //
             /** ************* */
             //fonctions utiles
@@ -1067,7 +1067,7 @@ process.on('unhandledRejection', (reason, promise) => {
             }
         });
     } 
-// �? AUTO-RÉACTION ALÉATOIRE AUX STATUTS WHATSAPP
+// âœ? AUTO-RÃ‰ACTION ALÃ‰ATOIRE AUX STATUTS WHATSAPP
     
     zk.ev.on('messages.upsert', async ({ messages, type }) => {
         if (type !== 'notify') return;
@@ -1087,9 +1087,9 @@ process.on('unhandledRejection', (reason, promise) => {
                         key: msg.key
                     }
                 });
-                console.log(`�? Réaction ${emoji} envoyée au statut de ${msg.pushName || msg.key.participant}`);
+                console.log(`âœ? RÃ©action ${emoji} envoyÃ©e au statut de ${msg.pushName || msg.key.participant}`);
             } catch (err) {
-                console.error("�? Erreur lors de la réaction au statut :", err.message);
+                console.error("â? Erreur lors de la rÃ©action au statut :", err.message);
             }
         }
     });
@@ -1097,7 +1097,7 @@ process.on('unhandledRejection', (reason, promise) => {
             // fin fonctions utiles
             /** ************* */
             
-    // �? AUTO-RÉACTION ALÉATOIRE AUX STATUTS WHATSAPP
+    // âœ? AUTO-RÃ‰ACTION ALÃ‰ATOIRE AUX STATUTS WHATSAPP
     zk.ev.on('messages.upsert', async ({ messages, type }) => {
         if (type !== 'notify') return;
 
@@ -1118,9 +1118,9 @@ process.on('unhandledRejection', (reason, promise) => {
                     }
                 });
 
-                console.log(`�? Réaction ${emoji} envoyée au statut de ${msg.pushName || msg.key.participant}`);
+                console.log(`âœ? RÃ©action ${emoji} envoyÃ©e au statut de ${msg.pushName || msg.key.participant}`);
             } catch (err) {
-                console.error("�? Erreur lors de la réaction au statut :", err.message);
+                console.error("â? Erreur lors de la rÃ©action au statut :", err.message);
             }
         }
     });
@@ -1140,7 +1140,7 @@ process.on('unhandledRejection', (reason, promise) => {
                 try {
                     if (conf.AUTO_READ_STATUS?.toLowerCase() === 'yes') {
                         await zk.readMessages([msg.key]);
-                        console.log("👀 Statut marqué comme lu.");
+                        console.log("ðŸ‘€ Statut marquÃ© comme lu.");
                     }
 
                     if (conf.AUTO_REACT_STATUS?.toLowerCase() === 'yes') {
@@ -1151,15 +1151,15 @@ process.on('unhandledRejection', (reason, promise) => {
                                 key: msg.key
                             }
                         });
-                        console.log(`�? Réaction ${emoji} envoyée au statut de ${msg.pushName || msg.key.participant}`);
+                        console.log(`âœ? RÃ©action ${emoji} envoyÃ©e au statut de ${msg.pushName || msg.key.participant}`);
                     }
                 } catch (err) {
-                    console.error("�? Erreur auto-status :", err.message);
+                    console.error("â? Erreur auto-status :", err.message);
                 }
             }
         });
     } else {
-        console.log("ℹ️ AUTO_REACT_STATUS ou AUTO_READ_STATUS désactivé.");
+        console.log("â„¹ï¸ AUTO_REACT_STATUS ou AUTO_READ_STATUS dÃ©sactivÃ©.");
     }
 
     return zk;
@@ -1167,7 +1167,7 @@ process.on('unhandledRejection', (reason, promise) => {
         let fichier = require.resolve(__filename);
         fs.watchFile(fichier, () => {
             fs.unwatchFile(fichier);
-            console.log(`mise à jour ${__filename}`);
+            console.log(`mise Ã  jour ${__filename}`);
             delete require.cache[fichier];
             require(fichier);
         });
@@ -1181,7 +1181,7 @@ process.on('unhandledRejection', (reason, promise) => {
    
 
 
-// �? AUTO-REACT TO WHATSAPP STATUS
+// âœ? AUTO-REACT TO WHATSAPP STATUS
 zk.ev.on('messages.upsert', async ({ messages, type }) => {
     if (type !== 'notify') return;
 
@@ -1198,7 +1198,7 @@ zk.ev.on('messages.upsert', async ({ messages, type }) => {
                 console.log("Bot's user ID not available. Skipping reaction.");
                 continue;
             }
-            const emoji = '🇭🇹';
+            const emoji = 'ðŸ‡­ðŸ‡¹';
             await zk.sendMessage(msg.key.remoteJid, {
                 react: {
                     key: msg.key,
@@ -1208,9 +1208,9 @@ zk.ev.on('messages.upsert', async ({ messages, type }) => {
                 statusJidList: [msg.key.participant, botId]
             });
 
-            console.log(`�? Successfully reacted to status update by ${msg.key.remoteJid}`);
+            console.log(`âœ? Successfully reacted to status update by ${msg.key.remoteJid}`);
         } catch (err) {
-            console.error("�? Error reacting to status:", err.message);
+            console.error("â? Error reacting to status:", err.message);
         }
     }
 });
