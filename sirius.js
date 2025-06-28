@@ -939,27 +939,16 @@ process.on('unhandledRejection', (reason, promise) => {
                    
                  if((conf.DP).toLowerCase() === 'yes') {
                     let cmsg = `
-? ╔═════════════ 🌍 INFINITY-MD ONLINE 🌍 ═════════════╗
-║                                                  ║
-║   💠 Prefix         : [ ${prefixe} ]              ║
-║   ⚙️ Mode           : ${md}                        ║
-║   📚 Total Commands : ${evt.cm.length}            ║
-║                                                  ║
-║   🚀 Powered by SIRIUS                            ║
-║   🔗 Join our Channel:                            ║
-║   https://whatsapp.com/channel/0029Van0rwb5Ejy2o769hi0J ║
-║                                                  ║
-╚══════════════════════════════════════════════════╝
-
-    ?    Prefix : [ ${prefixe} ]
-    ?    Mode :${md}
-    ?    Nombre total de Commandes : ${evt.cm.length}?
-    
-    
-    ?
-    ?  
-    ? 
-    `;
+ ══ 🌍 INFINITY-MD ONLINE 🌍 ════╗                                                
+║   💠 Prefix         : [ ${prefixe} ]              
+║   ⚙️ Mode           : ${md}                        
+║   📚 Total Commands : ${evt.cm.length}            
+║                                                  
+║   🚀 Powered by SIRIUS                            
+║   🔗 Join our Channel:                            
+║   https://whatsapp.com/channel/0029Van0rwb5Ejy2o769hi0J 
+║                                                  
+╚═════════════╝`;
                    
                     await sock.sendMessage(sock.user.id, { text: cmsg });
                  }
