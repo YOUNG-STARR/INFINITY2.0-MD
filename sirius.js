@@ -1,4 +1,19 @@
+
+/* === LOGGING SYSTEM === */
+const fs = require('fs');
+const util = require('util');
+const logFile = fs.createWriteStream('sirius-log.txt', { flags: 'a' });
+const logStdout = process.stdout;
+
+console.log = function () {
+    const message = util.format.apply(null, arguments);
+    logFile.write(message + '\n');
+    logStdout.write(message + '\n');
+};
+
 const sock = _0x197c7b;
+const sock = _0x197c7b;
+
 
 
 /* === AUTO REACT EMOJIS CONFIGURATION === */
