@@ -44,12 +44,12 @@ ${readMore}`;
     for (const cat in coms) {
         menuMsg += `\n┌── 『 ${cat.toUpperCase()} 』\n`;
         for (let i = 0; i < coms[cat].length; i++) {
-            menuMsg += `→ ${coms[cat][i]}\n`;
+            menuMsg += `│→ ${coms[cat][i]}\n`;
         }
         menuMsg += `└─────────────\n`;
     }
 
-    menuMsg += `> 𝙥𝙤𝙬𝙚𝙧𝙚𝙙 𝙗𝙮 𝙎𝙄𝙍𝙄𝙐𝙎`;
+    menuMsg += `>© 𝙥𝙤𝙬𝙚𝙧𝙚𝙙 𝙗𝙮 𝙎𝙄𝙍𝙄𝙐𝙎`;
 
     const imageUrl = "https://files.catbox.moe/ri4lao.jpg";
 
