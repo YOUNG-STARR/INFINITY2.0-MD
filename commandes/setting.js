@@ -1,4 +1,4 @@
-const { zokou } = require("../framework/infinityy");
+const { infinityy } = require("../framework/infinityy");
 const s = require("../set");
 
 // 💡 Stylish Box Formatter
@@ -78,7 +78,7 @@ const etatFeatures = [
 ];
 
 etatFeatures.forEach(({ name, etat, label, emoji, desc }) => {
-  zokou({
+  infinityy({
     nomCom: name,
     categorie: "Settings",
     reaction: emoji,
