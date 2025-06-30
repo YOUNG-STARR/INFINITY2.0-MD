@@ -37,20 +37,19 @@ infinityy({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOpt
 ┃👑 Owner   : *SIRIUS*
 ┗━━━━━━━━━━━━━┛
 
-${readMore}
-┌───『 COMMANDS 』───⭓`;
+${readMore}`;
 
-    let menuMsg = ``;
+    let menuMsg = "";
 
     for (const cat in coms) {
-        menuMsg += `\n│\n│ ♾️ *${cat.toUpperCase()}*\n│────────────`;
+        menuMsg += `\n┌── 『 ${cat.toUpperCase()} 』\n`;
         for (let i = 0; i < coms[cat].length; i++) {
-            menuMsg += `\n│ → .${coms[cat][i]}`;
+            menuMsg += `→ ${coms[cat][i]}\n`;
         }
-        menuMsg += `\n│──────────────`;
+        menuMsg += `└─────────────\n`;
     }
 
-    menuMsg += `\n> 𝙥𝙤𝙬𝙚𝙧𝙚𝙙 𝙗𝙮 𝙎𝙄𝙍𝙄𝙐𝙎*`;
+    menuMsg += `> 𝙥𝙤𝙬𝙚𝙧𝙚𝙙 𝙗𝙮 𝙎𝙄𝙍𝙄𝙐𝙎`;
 
     const imageUrl = "https://files.catbox.moe/ri4lao.jpg";
 
