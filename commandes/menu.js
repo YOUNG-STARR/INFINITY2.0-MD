@@ -34,7 +34,7 @@ infinityy({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOpt
 ┃🖥️ System  : *${os.platform()}*
 ┃📊 RAM     : *${(os.freemem() / 1024 / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024 / 1024).toFixed(2)} GB*
 ┃🧩 Commands: *${Object.keys(cm).length}*
-┃👑 Owner   : *SIRIUS*
+┃👑 Dev     : *SIRIUS*
 ┗━━━━━━━━━━━━━┛
 
 ${readMore}`;
@@ -51,7 +51,7 @@ ${readMore}`;
 
     menuMsg += `> © 𝙥𝙤𝙬𝙚𝙧𝙚𝙙 𝙗𝙮 𝙎𝙄𝙍𝙄𝙐𝙎`;
 
-    const imageUrl = "https://files.catbox.moe/ri4lao.jpg";
+    const imageUrl = "https://files.catbox.moe/rxuedn.jpg";
 
     try {
         zk.sendMessage(dest, {
